@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Node Chatroom
+  #usernameDiv
+    form#usernameForm(action = "")
+      h1 What is your username?
+      input#username(autocomplete="off")
+      button(type = "submit") Submit
+  ul#messages
+  form#chatForm(action = "")
+    input#m(autocomplete="off")
+    button(type = "submit") Send
+
