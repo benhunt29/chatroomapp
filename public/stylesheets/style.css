@@ -14,7 +14,7 @@ html, body {
   height: 100%;
 }
 
-#usernameForm {
+#usernameDiv {
   padding: 3px;
   position: relative;
   margin: auto;
@@ -23,18 +23,18 @@ html, body {
   transform: translateY(-50%);
 }
 
-#usernameForm h1 {
+#usernameDiv h1 {
   padding: 20px;
 }
 
-#usernameForm input {
+#usernameDiv input {
   border: 0;
   padding: 10px;
   width: 25%;
   margin-right: .5%;
 }
 
-#chatForm {
+#chatDiv {
   background: #000;
   padding: 3px;
   position: fixed;
@@ -42,14 +42,14 @@ html, body {
   width: 100%;
 }
 
-#chatForm input {
+#chatDiv input {
   border: 0;
   padding: 10px;
   width: 90%;
   margin-right: .5%;
 }
 
-form button {
+#chatDiv button {
   width: 9%;
   background: rgb(130, 224, 255);
   border: none; padding: 10px;

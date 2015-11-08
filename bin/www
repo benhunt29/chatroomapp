@@ -29,6 +29,9 @@ var io = require('socket.io')(server);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+var usernames = {};
+var numUsers = 0;
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function () {
@@ -36,6 +39,21 @@ io.on('connection', function(socket){
   });
   socket.on('chat', function (msg) {
     socket.broadcast.emit('chat', msg);
+    console.log(msg);
+  });
+  socket.on('add user', function(username){
+    socket.username = username;
+    usernames[username] = username;
+    numUsers++;
+
+    socket.emit('login', {
+      numUsers: numUsers
+    });
+    // echo globally (all clients) that a person has connected
+    socket.broadcast.emit('user joined', {
+      username: socket.username,
+      numUsers: numUsers
+    });
   });
 });
 
